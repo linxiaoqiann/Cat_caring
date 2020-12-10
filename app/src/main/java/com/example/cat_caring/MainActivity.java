@@ -4,11 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+
+
 public class MainActivity extends AppCompatActivity {
+    private MyDatabaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //123123456787888888888
+//        dbHelper = new MyDatabaseHelper(this,"test.db",null,1);
+//        dbHelper.getWritableDatabase();
     }
 }
