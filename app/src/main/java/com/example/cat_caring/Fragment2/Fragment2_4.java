@@ -1,4 +1,5 @@
-package Fragment2;
+package com.example.cat_caring.Fragment2;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,13 +15,14 @@ import com.example.cat_caring.R;
 
 
 
-public class Fragment2_3 extends Fragment {
+public class Fragment2_4 extends Fragment {
+
+
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,  Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.jibing,container,false);
+        View view=inflater.inflate(R.layout.lingyang,container,false);
         return view;
     }
-
 
 
 

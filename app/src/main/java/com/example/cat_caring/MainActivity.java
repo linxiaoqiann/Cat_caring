@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import Fragment2.Fragment2;
+import com.example.cat_caring.Fragment2.Fragment2;
 
 public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;

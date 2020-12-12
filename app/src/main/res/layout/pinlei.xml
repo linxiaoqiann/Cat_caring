@@ -1,46 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="Fragment2.Fragment2">
+    tools:context=".Fragment2.Fragment2_1">
 
-    <ScrollView
-        android:layout_width="413dp"
-        android:layout_height="502dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:visibility="visible">
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:text="        说到宠物猫，有可爱的、高冷的、温顺的等等等等，每只猫每个品种都有不同的长相和性格区分。给大家介绍一下常见的几种宠物猫品种及来源。
-                \n        一、苏格兰折耳猫:
-                \n        苏格兰折耳猫 (学名： Felis silvestris catus ，英文名：Scottish Fold) 是猫的一种在 耳朵 有 基因突变 的猫种。由于这猫种最初在苏格兰发现，所以以它的 发现 地和身体特征而命名。这种猫非常能吃苦耐闹，继承了祖先看仓库猫的特点，性格温和，叫声很小， 它乐意与人为伴，并用它特有的这种安宁的方式来表达。
-                \n        二、英国短毛猫:
-                \n        英国 短毛猫 ，体形圆胖，四肢粗短发达，毛短而密，头大脸圆，温柔平静，对人友善，极易饲养。大而圆的眼睛根据被毛不同而呈现各种颜色。作为一个古老的猫品种，其历史可追溯至古罗马时期的家猫，由于拥有悠久的育种历史，可以称得上是猫家族中的典范。英国短毛猫除了拥有固定而聚，代表性的遗传特征之外，又具有丰富的变异性，如背毛色眼睛颜色等。更重要的是，有了广泛的配种历史后，这种猫拥有了更健康的身体和更温驯的性格。
-                \n        三、美国短毛猫:
-                \n        美国短毛猫，又称美洲短毛虎纹猫，美国短毛猫素以体格魁梧，骨骼粗壮，肌肉发达，生性聪明，性格温顺著称，是短毛猫中的大体型猫。是由美国人把欧洲猫与美洲大陆的土种猫加以改良而育成，是家猫中的传统品种。1971年，其被选为美国最好的猫种之一。
-                \n        四、加菲猫:
-                \n        加菲猫有着浑圆的眼睛，大而圆的头部，两眼间距较阔，脖子短而粗，鼻子很短，因为鼻节较短泪腺发达容易流眼泪，性格温顺，十分亲人。
-                \n        五 、布偶猫:
-                \n        布偶猫，又称“布拉多尔（Ragdoll）”，发源于美国，是一种杂交品种宠物猫。是现存体型最大、体重最重的猫之一。头呈楔形，眼大而圆， 被毛 丰厚，四肢较长且富有肉感，尾长，身体柔软，毛色有重点色、手套色或双色等等。布偶猫较为 温顺 好静，对人友善。其美丽优雅又非常类似于狗的性格（Puppy cat）而又被称为仙女猫，小狗猫。特殊的外貌和温和的性格是布偶猫最大的特点之一。
-                " />
-        </LinearLayout>
-    </ScrollView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-
+</LinearLayout>

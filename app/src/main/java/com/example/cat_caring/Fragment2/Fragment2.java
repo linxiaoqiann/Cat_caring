@@ -1,20 +1,13 @@
-package Fragment2;
+package com.example.cat_caring.Fragment2;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.fragment.app.Fragment;
 
-import com.example.cat_caring.Fragment1;
-import com.example.cat_caring.Fragment3;
 import com.example.cat_caring.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -28,6 +21,8 @@ public class Fragment2<Fragmentmanager> extends Fragment {
     private Fragment[] fragments;
     private int lastfragment;//用于记录上个选择的Fragment
 
+
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container,  Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment2,container,false);
         return view;
@@ -35,6 +30,7 @@ public class Fragment2<Fragmentmanager> extends Fragment {
     public void onViewCreated(View view,Bundle savedInstanceState){
         super.onViewCreated(view,savedInstanceState);
         initFragment();
+
     }
     //初始化fragment和fragment数组
     private void initFragment()
@@ -134,6 +130,7 @@ public class Fragment2<Fragmentmanager> extends Fragment {
 
 
     }
+
 }
 
 
