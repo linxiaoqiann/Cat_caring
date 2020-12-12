@@ -21,6 +21,8 @@ public class Fragment2<Fragmentmanager> extends Fragment {
     private Fragment[] fragments;
     private int lastfragment;//用于记录上个选择的Fragment
 
+
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container,  Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment2,container,false);
         return view;
@@ -28,6 +30,7 @@ public class Fragment2<Fragmentmanager> extends Fragment {
     public void onViewCreated(View view,Bundle savedInstanceState){
         super.onViewCreated(view,savedInstanceState);
         initFragment();
+
     }
     //初始化fragment和fragment数组
     private void initFragment()
@@ -127,6 +130,7 @@ public class Fragment2<Fragmentmanager> extends Fragment {
 
 
     }
+
 }
 
 
