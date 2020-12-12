@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="Fragment2.Fragment2">
+    android:orientation="vertical"
+    tools:context=".Fragment2.Fragment2">
 
     <ScrollView
-        android:layout_width="413dp"
-        android:layout_height="502dp"
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
         tools:visibility="visible">
 
         <LinearLayout
@@ -25,7 +25,7 @@
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="771dp"
 
                 android:text="        说到宠物猫，有可爱的、高冷的、温顺的等等等等，每只猫每个品种都有不同的长相和性格区分。给大家介绍一下常见的几种宠物猫品种及来源。
                 \n        一、苏格兰折耳猫:
@@ -42,5 +42,5 @@
         </LinearLayout>
     </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
 

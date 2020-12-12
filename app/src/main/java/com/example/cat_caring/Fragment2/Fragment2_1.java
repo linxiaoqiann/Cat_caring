@@ -1,4 +1,4 @@
-package Fragment2;
+package com.example.cat_caring.Fragment2;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

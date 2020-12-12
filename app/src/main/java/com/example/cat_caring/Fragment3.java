@@ -25,8 +25,8 @@ public class Fragment3 extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        textView=(TextView)getActivity().findViewById(R.id.textView1);
-        button=(Button)getActivity().findViewById(R.id.button1);
+        textView=(TextView)getActivity().findViewById(R.id.textView3);
+        button=(Button)getActivity().findViewById(R.id.button3);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

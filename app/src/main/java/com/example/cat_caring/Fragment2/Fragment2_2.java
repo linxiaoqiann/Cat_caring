@@ -1,4 +1,4 @@
-package Fragment2;
+package com.example.cat_caring.Fragment2;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,17 +9,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
-
-
 import com.example.cat_caring.R;
 
 
 
-public class Fragment2_5 extends Fragment {
-
-
+public class Fragment2_2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,  Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.lumaoxuzhi,container,false);
+        View view=inflater.inflate(R.layout.toushi,container,false);
         return view;
     }
 

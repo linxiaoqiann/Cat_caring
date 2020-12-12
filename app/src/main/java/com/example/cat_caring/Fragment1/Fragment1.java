@@ -1,46 +1,56 @@
-package com.example.cat_caring;
-
+package com.example.cat_caring.Fragment1;
 
 import android.os.Bundle;
-import android.view.MenuItem;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
-import com.example.cat_caring.Fragment1.Fragment1;
+import android.view.LayoutInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.example.cat_caring.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.example.cat_caring.Fragment2.Fragment2;
 
-public class MainActivity extends AppCompatActivity {
+
+public class Fragment1 extends Fragment {
     private BottomNavigationView bottomNavigationView;
-    private Fragment1 fragment1;
-    private Fragment2 fragment2;
-    private Fragment3 fragment3;
+    private Fragment1_1 fragment1;
+    private Fragment1_2 fragment2;
+    private Fragment1_3 fragment3;
+    private Fragment1_4 fragment4;
+    private Fragment1_5 fragment5;
     private Fragment[] fragments;
     private int lastfragment;//用于记录上个选择的Fragment
+    @Override
+    public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
+        View view=inflater.inflate(R.layout.fragment1,container,false);
+        return view;
+    }
 
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public void onViewCreated(View view,Bundle savedInstanceState){
+        super.onViewCreated(view,savedInstanceState);
         initFragment();
     }
     //初始化fragment和fragment数组
     private void initFragment()
     {
 
-        fragment1 = new Fragment1();
-        fragment2 = new Fragment2();
-        fragment3 = new Fragment3();
-        fragments = new Fragment[]{fragment1,fragment2,fragment3};
+        fragment1 = new Fragment1_1();
+        fragment2 = new Fragment1_2();
+        fragment3 = new Fragment1_3();
+        fragment4 = new Fragment1_4();
+        fragment5 = new Fragment1_5();
+        fragments = new Fragment[]{fragment1,fragment2,fragment3,fragment4,fragment5};
         lastfragment=0;
-        getSupportFragmentManager().beginTransaction().replace(R.id.mainview,fragment1).show(fragment1).commit();
-        bottomNavigationView=(BottomNavigationView)findViewById(R.id.bnv);
+        getChildFragmentManager().beginTransaction().replace(R.id.mainview,fragment1).show(fragment1).commit();
+        bottomNavigationView=getActivity().findViewById(R.id.bnv);
         bottomNavigationView.setOnNavigationItemSelectedListener(changeFragment);
     }
+
     //判断选择的菜单
     private BottomNavigationView.OnNavigationItemSelectedListener changeFragment= new BottomNavigationView.OnNavigationItemSelectedListener() {
-        @Override
-        public boolean onNavigationItemSelected( MenuItem item) {
+        public boolean onNavigationItemSelected(MenuItem item) {
 
             switch (item.getItemId())
             {
@@ -75,10 +85,31 @@ public class MainActivity extends AppCompatActivity {
 
                     }
 
+
                     return true;
                 }
+                case R.id.id4:
+                {
+                    if(lastfragment!=3)
+                    {
+                        switchFragment(lastfragment,3);
+                        lastfragment=3;
 
+                    }
 
+                    return true;
+                }
+                case R.id.id5:
+                {
+                    if(lastfragment!=4)
+                    {
+                        switchFragment(lastfragment,4);
+                        lastfragment=4;
+
+                    }
+
+                    return true;
+                }
             }
 
 
@@ -88,13 +119,12 @@ public class MainActivity extends AppCompatActivity {
     //切换Fragment
     private void switchFragment(int lastfragment,int index)
     {
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
         transaction.hide(fragments[lastfragment]);//隐藏上个Fragment
         if(fragments[index].isAdded()==false)
         {
             transaction.add(R.id.mainview,fragments[index]);
-
-
         }
         transaction.show(fragments[index]).commitAllowingStateLoss();
 

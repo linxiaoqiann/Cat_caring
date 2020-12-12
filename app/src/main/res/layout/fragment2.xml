@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="Fragment2.Fragment2">
+    tools:context=".Fragment2.Fragment2">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bvn"
-        android:layout_width="wrap_content"
-        android:layout_height="455dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
-        android:layout_weight="5"
+        android:layout_weight="10"
         android:background="?android:attr/windowBackground"
         app:labelVisibilityMode="labeled"
         app:layout_constraintTop_toTopOf="parent"
