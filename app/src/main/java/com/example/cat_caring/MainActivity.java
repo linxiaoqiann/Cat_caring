@@ -1,13 +1,13 @@
 package com.example.cat_caring;
 
-
 import android.os.Bundle;
 import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.fragment.app.Fragment;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import Fragment2.Fragment2;
 
 public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private Fragment3 fragment3;
     private Fragment[] fragments;
     private int lastfragment;//用于记录上个选择的Fragment
-    @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
         lastfragment=0;
         getSupportFragmentManager().beginTransaction().replace(R.id.mainview,fragment1).show(fragment1).commit();
         bottomNavigationView=(BottomNavigationView)findViewById(R.id.bnv);
-
         bottomNavigationView.setOnNavigationItemSelectedListener(changeFragment);
     }
     //判断选择的菜单
@@ -76,8 +75,6 @@ public class MainActivity extends AppCompatActivity {
 
                     return true;
                 }
-
-
             }
 
 

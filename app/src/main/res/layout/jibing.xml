@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FBFBFB"
+    android:shape="rectangle"
+    tools:context="Fragment2.Fragment2">
+
+
+    <ScrollView
+        android:layout_width="413dp"
+        android:layout_height="502dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="        预防和早期发现是保证猫健康的关键。越早的发现猫的常见疾病和症状，你就可以越早的采取应对措施，才不至于到最后危及生命。下面是猫的四个最常见的疾病以及如何发现它们。
+    \n        一、皮肤病:
+    \n        猫的皮肤疾病比其它任何疾病都普遍。如果你经常梳理你的猫，那么你就会很容易发现皮肤问题，这类问题其实很容易治疗。  瘙痒和脱毛是大多数皮肤疾病的信号。其它症状还包括：皮肤干燥、鳞片、发红、毛发油腻、丘疹、水泡、结痂、异味等。如果你的猫出现频繁抓、咬的行为，就说明它身体的某些部位受到了不正常的刺激，那么你就要寻找这种刺激的来源，并且尽快采取措施。
+    \n        二、体外寄生虫:
+    \n        体外寄生虫是猫常见的健康问题之一，通常是跳蚤和蜱。跳蚤可以导致猫绦虫病和引起猫的贫血（尤其是小猫）。蜱也能引起贫血和导致莱姆病。猫有了跳蚤和蜱，可以使用抗组胺剂和类固醇药物进行治疗，从而控制炎症。跳蚤和蜱非常容易预防。只要保证你的猫在室内，不要外出，使用专用药物治疗，每周给猫洗澡，保持猫身体的清洁，同时每周使用消毒剂或硅藻土类消杀剂对地毯、窗帘、猫用品与玩具、家具等进行消杀处理，很快就会治愈。
+    \n        三、肥胖:
+    \n        最近的研究表明，多达40%-50%的猫是超重的，猫肥胖最常见的原因是：
+    \n        ● 自由摄食（主人给猫提供一周7天、一天24小时全天候的猫干粮，让猫自由随便吃）
+    \n        ● 高含量碳水化合物的猫干粮
+    \n        ● 猫缺乏运动的生活方式
+    \n        绝育的猫更容易肥胖，源于他们更低的热量（卡路里）需求。研究表明，肥胖的猫较正常的猫患糖尿病的几率高4倍，患非过敏性皮肤疾病的几率高2倍，且很容易患脂肪肝。对于刚刚开始有点胖的猫，猫罐头是一个不错的选择，优质的猫罐头含有更少的热量（卡路里）。如果你的猫只吃猫干粮，那么就给它选一款高蛋白质低碳水化合物含量的猫粮，并且采取早、晚定时喂食取代全天候自由摄食的饮食方式。每天多一些时间陪猫玩，以增加猫每天的跑、跳等运动量，增加猫的能量输出。如果你的猫已经肥胖了，就需要咨询兽医，制定一个科学的减肥计划。许多猫的常见疾病和健康问题都直接或间接的与猫的肥胖有关系，因此，保持你的猫拥有一个正常的体重有助于猫的整体健康。
+    \n        四、猫下泌尿道疾病（FLUTD）:
+    \n        猫下泌尿道疾病（FLUTD）是猫膀胱和尿道的一些感染症状的总称。包括特发性猫膀胱炎（FIC），泌尿系统结石和尿道梗阻。患有猫下泌尿道疾病（FLUTD）的猫，通常排尿困难、疼痛，且排尿频繁。尿液中通常有血。患此病的猫往往会过度舔舐自己的生殖器，还会在猫砂盆外面撒尿。猫下泌尿道疾病（FLUTD）多发于中年猫和进封闭式猫砂盆都困难的肥胖猫。给猫提供一个清新的、干净的饮用水源（流动喷泉式饮水器是不错的选择）可以增加猫的饮水量，有助于FLUTD的治疗。虽然还不确定，但猫的“应激”很可能是导致特发性猫膀胱炎（FIC）病症发展的一个重要因素。如果你的猫曾经患过FIC，那么当有如家中猫口变化或新进猫口到家这类可能会引起猫“应激”发生期间，一定要多注意猫的身体症状。FLUTD发病，若在24小时内未及时予以治疗，很有可能危及生命。因此当发现症状时，应立即去医院看兽医，尽快采取治疗措施。
+    " />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

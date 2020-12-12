@@ -10,9 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
-/**
- * Created by IT-CTY on 2018/4/25.
- */
+
 
 public class Fragment3 extends Fragment {
     private TextView textView;

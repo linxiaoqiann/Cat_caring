@@ -14,6 +14,11 @@ import android.widget.Toast;
 public class Fragment1 extends Fragment {
     private TextView textView;
     private Button button;
+    private Button bt1;
+    private Button bt2;
+    private Button bt3;
+    private Button bt4;
+    private Button bt5;
     @Override
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment1,container,false);
