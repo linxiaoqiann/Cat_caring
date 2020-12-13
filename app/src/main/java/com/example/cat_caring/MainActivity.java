@@ -3,10 +3,12 @@ package com.example.cat_caring;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.fragment.app.Fragment;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.example.cat_caring.ui.fragment.PersonPageFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
@@ -14,15 +16,17 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private Fragment1 fragment1;
     private Fragment2 fragment2;
-    private Fragment3 fragment3;
+    private PersonPageFragment fragment3;
     private Fragment[] fragments;
     private int lastfragment;//用于记录上个选择的Fragment
+    private MyDatabaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+//        dbHelper = new MyDatabaseHelper(this,"User.db",null,1);
+//        dbHelper.getWritableDatabase();
         initFragment();
         //初始化fragment和fragment数组
     }
@@ -31,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         fragment1 = new Fragment1();
         fragment2 = new Fragment2();
-        fragment3 = new Fragment3();
+        fragment3 = new PersonPageFragment();
         fragments = new Fragment[]{fragment1, fragment2, fragment3};
         lastfragment = 0;
         getSupportFragmentManager().beginTransaction().replace(R.id.mainview, fragment1).show(fragment1).commit();
