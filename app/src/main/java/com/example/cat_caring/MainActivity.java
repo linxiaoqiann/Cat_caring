@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.cat_caring.Fragment1.Fragment1;
+import com.example.cat_caring.Fragment2.Fragment2;
 import com.example.cat_caring.ui.fragment.PersonPageFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
