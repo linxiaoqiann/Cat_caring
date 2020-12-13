@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment2.Fragment2">
+
+    <ScrollView
+        android:layout_width="413dp"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="        撸猫可以缓解压力，改善抑郁，降低血压，让心跳变得平稳，可以说撸猫的好处多了去了。撸猫虽然好处多，但是猫咪也是个有个性的小动物，如果你让它感觉不高兴，它们可是随时会给你一爪子的哦。只有掌握了正确的撸猫姿势，才可以让猫咪开心之余，自己也能高高兴兴。
+    \n        一、接触猫要轻柔安静:
+    \n        猫咪是偏向于安静内敛的动物，它们表达情感的方式是含蓄的，所以它们也无法接受太过于热情的情感表达。你冲过去给狗狗一个大大的拥抱，狗狗会很热烈地回应你，但是如果你这么对猫，猫要么跑掉，要么对你伸爪子。
+    \n        二、触摸猫之前，让它闻闻你的手:
+    \n        在接触不熟悉的猫咪之前，最好先让猫咪闻一闻你的手，或者你在它身边安静地呆一会在上手撸猫。不然，贸然去摸或者抱猫咪，它们可能会因为反感或者应激而对你伸爪子哦。让它闻闻你的手，熟悉你的气味，让它知道你没恶意，自然就不会太抗拒你撸它的行为啦。
+    \n        三、可以先摸摸头和下巴:
+    \n        一般情况下，猫咪不会太抗拒被摸头和下巴，你摸一摸它们甚至会感觉很舒服。如果你和猫咪不熟悉的话，可千万别轻易摸猫咪的肚子和四肢，因为这是猫咪的脆弱敏感部位，猫咪不是万分信任你，是不会轻易让你摸的哦。
+    \n        四、随时观察猫咪反应:
+    \n        猫咪虽然可以让你撸，但是不代表它们可以让你一直撸。撸猫讲究见好就收，一旦发现猫咪开始用力地甩尾巴或者想要走开，那么就放它走，不要一直撸了，不耐烦的猫咪可是很凶的哦。
+    \n        五、切记不要碰肚皮和尾巴：
+    \n        除非信赖值非常飞常高，否则会死（笑）。
+    \n        掌握了这四点撸猫的方法，基本上可以搞定百分之九十以上的猫咪了。剩下那百分之十极其难搞定的，那咱就别去挑战了，以免受伤哈！" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

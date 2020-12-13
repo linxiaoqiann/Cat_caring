@@ -6,7 +6,7 @@
         />
     <item
         android:id="@+id/id2"
-        android:title="科普"
+        android:title="百科"
         />
     <item
         android:title="我的"

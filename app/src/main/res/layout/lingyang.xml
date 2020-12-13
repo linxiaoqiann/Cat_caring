@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment2.Fragment2">
+
+    <ScrollView
+        android:layout_width="413dp"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:text="        许多铲屎官是非常有爱心的，对于流浪在外的猫猫狗狗，总想着给它们一个栖息的地方，一个温暖的家。但是将流浪猫撸回家并没有那么容易，我们需要提前准备一些事情。
+    \n        一、先确定它所处的环境:
+    \n        收养流浪猫之前我们要先弄清楚的现在的处境，大概的来历之后才慢慢接近，切记不能贸然的去接近它们，这样它们人容易抓到你。你可以先带些零食鱼罐头之类的，和它打好关系，若是一只刚离开母猫还在吃奶的小猫咪，那就快带回家吧。
+    \n        二、千万不可以心急:
+    \n        流浪猫是非常警惕的，因为它们在外面流浪时刻都有危险，所以警惕心很高。这时候你千万不要强行的去抱它们，很容易抓伤你，也很容易在它们心里面留下不好的印象。所以只能靠慢慢接触循序渐进，让它们放松对你的警惕，最后信任你，这时候你就可以将它们带回家了。
+    \n        三、检查身体:
+    \n        带回家来的流浪猫首先的第一件事情是要先给它检查身体，是不是有伤口或者是寄生虫等。若自己无法处理的话，最好是先带到宠物医院来一次全身的检查，确定它的身体是否是健康的，耳朵皮肤表面这些是否有猫癣。
+    \n        四、教猫咪用猫砂:
+    \n        幼猫接回家来要观察它时候会自己舔毛清理，还有会不会用猫砂盆。如果不会的话，我们可以慢慢的教它，先用纸巾包住它拉的便便，给它闻一下，然后将它领到猫砂盆那儿，再用它的爪子去扒几下，几次之后，小猫咪就能够自己去猫砂盆里面上厕所了。
+    \n        五、一定要有足够耐心的陪伴:
+    \n        因为长时间在外流浪的原因，会导致猫咪很没有安全感，只有通过长时间的陪伴之后猫咪才会慢慢的和你接触，对你打开心扉。其实这是一件非常不容易的事情，对铲屎官来说也是非常具有挑战性的，但是当你看到从前那只战战兢兢的猫咪变成了你的小棉袄的时候，其实你是非常有成就感的。
+    \n        领养流浪猫是一件很不容易的事情，特别是生病的流浪猫，因为谁都不想要一个累赘。但是猫咪这个小家伙实在让人太怜爱，也有不少有爱心有经济能力的铲屎官们愿意给它们一个温暖的家，愿意用自己的内心去爱它们，让这些小天使重归家庭。但是在领养之前先做好这几件事，相信会容易和猫咪相处。
+    " />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
