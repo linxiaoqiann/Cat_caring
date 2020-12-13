@@ -20,6 +20,8 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);//即activity_login.xml
         findViews();
+        UserService uService=new UserService(Login.this);
+        uService.inittable();
     }
     private EditText username;
     private EditText password;
