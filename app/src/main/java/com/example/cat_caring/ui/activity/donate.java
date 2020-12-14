@@ -11,12 +11,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.cat_caring.Fragment2.pinleiAdapter;
+import com.example.cat_caring.db.User;
 import com.example.cat_caring.ui.activity.donationAdapter;
 import com.example.cat_caring.ui.activity.donation;
 import com.example.cat_caring.R;
@@ -50,6 +54,41 @@ public class donate extends AppCompatActivity {
 
     private List<donation> donationList = new ArrayList<donation>();
     private ListView listView = null;
+//    EditText username;
+//    EditText password;
+//    EditText age;
+//    RadioGroup sex;
+//    Button register;
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_register);
+//        findViews();
+//        register.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                String name=username.getText().toString().trim();
+//                String pass=password.getText().toString().trim();
+//                String agestr=age.getText().toString().trim();
+//                String sexstr=((RadioButton)Register.this.findViewById(sex.getCheckedRadioButtonId())).getText().toString();
+//                Log.i("TAG",name+"_"+pass+"_"+agestr+"_"+sexstr);
+//                UserService uService=new UserService(Register.this);
+//                User user=new User();
+//                user.setUsername(name);
+//                user.setPassword(pass);
+//                user.setAge(Integer.parseInt(agestr));
+//                user.setSex(sexstr);
+//                uService.register(user);
+//                Toast.makeText(Register.this, "注册成功", Toast.LENGTH_LONG).show();
+//            }
+//        });
+//    }
+//    private void findViews() {
+//        username=(EditText) findViewById(R.id.usernameRegister);
+//        password=(EditText) findViewById(R.id.passwordRegister);
+//        age=(EditText) findViewById(R.id.ageRegister);
+//        sex=(RadioGroup) findViewById(R.id.sexRegister);
+//        register=(Button) findViewById(R.id.Register);
+//    }
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.donation,container,false);
         return view;

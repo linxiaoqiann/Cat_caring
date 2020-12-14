@@ -1,6 +1,7 @@
 package com.example.cat_caring.ui.activity;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -41,6 +42,9 @@ public class Register extends AppCompatActivity {
                 user.setSex(sexstr);
                 uService.register(user);
                 Toast.makeText(Register.this, "注册成功", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent();
+                intent.setClass(Register.this, Login.class);
+                startActivity(intent);
             }
         });
     }
