@@ -22,17 +22,17 @@ public class Fragment2_1 extends Fragment {
     private List<cat_pinlei> pinleiList = new ArrayList<cat_pinlei>();
     private ListView listView = null;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,  Bundle savedInstanceState) {
-        View view=inflater.inflate(layout.pinlei,container,false);
+        View view=inflater.inflate(R.layout.pinlei,container,false);
         return view;
     }
     public void onViewCreated(View view,Bundle savedInstanceState){
         super.onViewCreated(view,savedInstanceState);
-        initFruits(); // 初始化水果数据
+        initpinlei(); // 初始化水果数据
         pinleiAdapter adapter = new pinleiAdapter(getContext(), R.layout.pinlei_item, pinleiList);//实例化FruitAdapter
-        listView = getActivity().findViewById(R.id.listView);//绑定Listview
+        listView = getView().findViewById(R.id.listView);//绑定Listview
         listView.setAdapter(adapter);//设置Adapter
     }
-    private void initFruits() {
+    private void initpinlei() {
         cat_pinlei zheermao = new cat_pinlei("苏格兰折耳猫","1-5","温顺",R.drawable.zheermao); //添加苹果图片
         pinleiList.add(zheermao);
         cat_pinlei yingduan = new cat_pinlei("英国短毛猫", "1-5","温顺",R.drawable.yingduan); //添加苹果图片
