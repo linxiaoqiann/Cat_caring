@@ -2,9 +2,13 @@ package com.example.cat_caring.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -15,26 +19,42 @@ import com.example.cat_caring.R;
 import com.example.cat_caring.db.User;
 
 public class Login extends AppCompatActivity {
+    private CheckBox checkBox;
+    private EditText username;
+    private EditText password;
+    private Button login;
+    private Button register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);//即activity_login.xml
         findViews();
+
         UserService uService=new UserService(Login.this);
         uService.inittable();
     }
-    private EditText username;
-    private EditText password;
-    private Button login;
-    private Button register;
 
     private void findViews() {
         username=(EditText) findViewById(R.id.username);
         password=(EditText) findViewById(R.id.password);
         login=(Button) findViewById(R.id.login);
         register=(Button) findViewById(R.id.register);
+        checkBox = (CheckBox) findViewById(R.id.checkBox);
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+                if(isChecked){
+                    //如果选中，显示密码
+                    password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }else{
+                    //否则隐藏密码
+                    password.setTransformationMethod(PasswordTransformationMethod.getInstance());
 
+                }
+
+            }
+        });
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

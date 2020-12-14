@@ -42,7 +42,7 @@ public class UserService {
                 user.setAge(age);
                 LoginUser.getInstance().login(user);
             cursor.close();
-            user = new User(cursor.getString(cursor.getColumnIndex("username")),cursor.getString(cursor.getColumnIndex("password")),cursor.getInt(cursor.getColumnIndex("age")),cursor.getString(cursor.getColumnIndex("sex")));
+           // user = new User(cursor.getString(cursor.getColumnIndex("username")),cursor.getString(cursor.getColumnIndex("password")),cursor.getInt(cursor.getColumnIndex("age")),cursor.getString(cursor.getColumnIndex("sex")));
             return true;
         }
         return false;
