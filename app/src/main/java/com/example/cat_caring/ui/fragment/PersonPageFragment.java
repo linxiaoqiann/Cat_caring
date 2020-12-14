@@ -76,7 +76,7 @@ public class PersonPageFragment extends Fragment implements View.OnClickListener
                 startActivity(intent2);
                 break;
             case R.id.donate:
-                Intent intent3 = new Intent(getActivity(), com.example.cat_caring.ui.activity.newdonate.class);
+                Intent intent3 = new Intent(getActivity(), com.example.cat_caring.ui.activity.donate.class);
                 startActivity(intent3);
                 break;
             case R.id.shoucang:

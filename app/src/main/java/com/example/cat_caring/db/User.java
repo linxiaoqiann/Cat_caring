@@ -1,16 +1,26 @@
 package com.example.cat_caring.db;
 
 import java.io.Serializable;
+import java.sql.Blob;
 
 public class User implements Serializable{
     private int id;
     private String username;
     private String password;
     private int age;
+    private Blob image;
     private String sex;
     public User() {
         super();
         // TODO Auto-generated constructor stub
+    }
+    public User(String username, String password, int age, String sex, Blob image) {
+        super();
+        this.username = username;
+        this.password = password;
+        this.age = age;
+        this.sex = sex;
+        this.image=image;
     }
     public User(String username, String password, int age, String sex) {
         super();
@@ -18,6 +28,7 @@ public class User implements Serializable{
         this.password = password;
         this.age = age;
         this.sex = sex;
+        this.image=null;
     }
     public int getId() {
         return id;
@@ -48,6 +59,12 @@ public class User implements Serializable{
     }
     public void setSex(String sex) {
         this.sex = sex;
+    }
+    public Blob getImage() {
+        return image;
+    }
+    public void setImage(Blob image) {
+        this.image = image;
     }
     @Override
     public String toString() {

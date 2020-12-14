@@ -17,7 +17,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".ui.activity.Login" />
         <activity android:name=".ui.activity.mydonate" />
-        <activity android:name=".ui.activity.newdonate" />
+        <activity android:name=".ui.activity.donate" />
         <activity android:name=".oldDon" />
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->

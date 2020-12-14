@@ -10,6 +10,7 @@ import com.example.cat_caring.db.User;
 
 
 public class UserService {
+    public User user;
     private MyDatabaseHelper dbHelper;
     public UserService(Context context){
         dbHelper=new MyDatabaseHelper(context);
@@ -25,6 +26,7 @@ public class UserService {
         Cursor cursor=sdb.rawQuery(sql, new String[]{username,password});
         if(cursor.moveToFirst()==true){
             cursor.close();
+            user = new User(cursor.getString(cursor.getColumnIndex("username")),cursor.getString(cursor.getColumnIndex("password")),cursor.getInt(cursor.getColumnIndex("age")),cursor.getString(cursor.getColumnIndex("sex")));
             return true;
         }
         return false;
@@ -38,13 +40,23 @@ public class UserService {
         sdb.execSQL(sql, obj);
         return true;
     }
+
+//    public boolean donate(donation user){
+//        SQLiteDatabase sdb=dbHelper.getReadableDatabase();
+////        String sql1="create table user(id integer primary key autoincrement,username varchar(20),password varchar(20),age integer,sex varchar(2))";
+////        sdb.execSQL(sql1);
+//        String sql="update donation set maoliang=?,maobohe=?,maosha=?,maoguantou=? where userid=?";
+//        Object obj[]={user.getuserid(),user.getmaoliang(),user.getmaobohe(),user.getmaosha(),user.getmaoguantou()};
+//        sdb.execSQL(sql, obj);
+//        return true;
+//    }
     public void inittable(){
         SQLiteDatabase sdb=dbHelper.getReadableDatabase();
         String sql="create table if not exists user(id integer primary key autoincrement,username varchar(20),password varchar(20),age integer,sex varchar(2))";
         sdb.execSQL(sql);
         String sql1="create table if not exists cat(id integer primary key autoincrement,catname varchar(20),maose varchar(20),birthdate varchar(20),sex varchar(2),condition varchar(20),character varchar(100),image BLOB)";
         sdb.execSQL(sql1);
-        String sql2="create table if not exists donation(userid integer, maoliang integer,maobohe integer,maosha integer,maoguantou integer,donationcount integer, foreign key(userid) REFERENCES user(id))";
+        String sql2="create table if not exists donation(userid integer, maoliang integer,maobohe integer,maosha integer,maoguantou integer,foreign key(userid) REFERENCES user(id))";
         sdb.execSQL(sql2);
 
     }

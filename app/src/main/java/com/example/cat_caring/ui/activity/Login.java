@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cat_caring.MainActivity;
 import com.example.cat_caring.R;
+import com.example.cat_caring.db.User;
 
 public class Login extends AppCompatActivity {
 
