@@ -9,12 +9,13 @@ import android.widget.ListView;
 import androidx.fragment.app.Fragment;
 
 import com.example.cat_caring.R;
+import com.example.cat_caring.db.cat;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Fragment1_4 extends Fragment {
-    private List<schoolcat> catList = new ArrayList<schoolcat>();
+    private List<cat> catList = new ArrayList<cat>();
     private ListView listView = null;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -31,15 +32,7 @@ public class Fragment1_4 extends Fragment {
     }
 
     private void initFruits() {
-        schoolcat zheermaoo = new schoolcat("苏格兰折耳猫", R.drawable.zheermao); //添加苹果图片
+        cat zheermaoo = new cat(1,"苏格兰折耳猫","白","2019-01-01","公","健康","不咬人"); //添加苹果图片
         catList.add(zheermaoo);
-        schoolcat yingduann = new schoolcat("英国短毛猫", R.drawable.yingduan); //添加苹果图片
-        catList.add(yingduann);
-        schoolcat meiduann = new schoolcat("美国短毛猫", R.drawable.meiduan); //添加苹果图片
-        catList.add(meiduann);
-        schoolcat jiafeii = new schoolcat("加菲猫", R.drawable.jiafei); //添加苹果图片
-        catList.add(jiafeii);
-        schoolcat buouu = new schoolcat("布偶猫", R.drawable.buou); //添加苹果图片
-        catList.add(buouu);
     }
 }

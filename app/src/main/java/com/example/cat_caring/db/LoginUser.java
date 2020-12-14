@@ -9,9 +9,9 @@ import com.example.cat_caring.ui.activity.UserService;
 //但是此处是存储用户信息的副本，这点是否合适有待考虑，可以考虑使用User类
 //LoginUser相对于模拟登陆，并且作为存储数据库的一个缓冲区
 public class LoginUser extends Application {
-    private static LoginUser login_user = new LoginUser();
+    public static LoginUser login_user = new LoginUser();
     private static User _user;
-    private long id;
+    private int id;
     private String name;
     private byte[] portrait;
     private String region;
@@ -86,7 +86,7 @@ public class LoginUser extends Application {
                 '}';
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 //
