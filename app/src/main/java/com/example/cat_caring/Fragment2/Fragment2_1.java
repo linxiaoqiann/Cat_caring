@@ -33,15 +33,15 @@ public class Fragment2_1 extends Fragment {
         listView.setAdapter(adapter);//设置Adapter
     }
     private void initpinlei() {
-        cat_pinlei zheermao = new cat_pinlei("苏格兰折耳猫","1-5","温顺",R.drawable.zheermao); //添加苹果图片
+        cat_pinlei zheermao = new cat_pinlei("苏格兰折耳猫","寿命：1-5 years","温顺",R.drawable.zheermao); //添加苹果图片
         pinleiList.add(zheermao);
-        cat_pinlei yingduan = new cat_pinlei("英国短毛猫", "1-5","温顺",R.drawable.yingduan); //添加苹果图片
+        cat_pinlei yingduan = new cat_pinlei("英国短毛猫", "寿命：1-5 years","活泼",R.drawable.yingduan); //添加苹果图片
         pinleiList.add(yingduan);
-        cat_pinlei meiduan = new cat_pinlei("美国短毛猫", "1-5","温顺",R.drawable.meiduan); //添加苹果图片
+        cat_pinlei meiduan = new cat_pinlei("美国短毛猫", "寿命：1-5 years","机警",R.drawable.meiduan); //添加苹果图片
         pinleiList.add(meiduan);
-        cat_pinlei jiafei = new cat_pinlei("加菲猫", "1-5","温顺",R.drawable.jiafei); //添加苹果图片
+        cat_pinlei jiafei = new cat_pinlei("加菲猫", "寿命：1-5 years","慵懒",R.drawable.jiafei); //添加苹果图片
         pinleiList.add(jiafei);
-        cat_pinlei buou = new cat_pinlei("布偶猫", "1-5","温顺",R.drawable.buou); //添加苹果图片
+        cat_pinlei buou = new cat_pinlei("布偶猫", "寿命：1-5 years","好动",R.drawable.buou); //添加苹果图片
         pinleiList.add(buou);     //添加文本apple
         //添加文本orange
     }

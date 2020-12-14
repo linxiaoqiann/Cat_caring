@@ -20,6 +20,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:src="@drawable/lumao" />
+
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
@@ -36,7 +42,8 @@
     \n        猫咪虽然可以让你撸，但是不代表它们可以让你一直撸。撸猫讲究见好就收，一旦发现猫咪开始用力地甩尾巴或者想要走开，那么就放它走，不要一直撸了，不耐烦的猫咪可是很凶的哦。
     \n        五、切记不要碰肚皮和尾巴：
     \n        除非信赖值非常飞常高，否则会死（笑）。
-    \n        掌握了这四点撸猫的方法，基本上可以搞定百分之九十以上的猫咪了。剩下那百分之十极其难搞定的，那咱就别去挑战了，以免受伤哈！" />
+    \n        掌握了这四点撸猫的方法，基本上可以搞定百分之九十以上的猫咪了。剩下那百分之十极其难搞定的，那咱就别去挑战了，以免受伤哈！"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         </LinearLayout>
     </ScrollView>

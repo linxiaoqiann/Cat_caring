@@ -20,6 +20,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="380dp"
+                tools:src="@drawable/lingyangmao" />
+
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
@@ -37,7 +43,8 @@
     \n        五、一定要有足够耐心的陪伴:
     \n        因为长时间在外流浪的原因，会导致猫咪很没有安全感，只有通过长时间的陪伴之后猫咪才会慢慢的和你接触，对你打开心扉。其实这是一件非常不容易的事情，对铲屎官来说也是非常具有挑战性的，但是当你看到从前那只战战兢兢的猫咪变成了你的小棉袄的时候，其实你是非常有成就感的。
     \n        领养流浪猫是一件很不容易的事情，特别是生病的流浪猫，因为谁都不想要一个累赘。但是猫咪这个小家伙实在让人太怜爱，也有不少有爱心有经济能力的铲屎官们愿意给它们一个温暖的家，愿意用自己的内心去爱它们，让这些小天使重归家庭。但是在领养之前先做好这几件事，相信会容易和猫咪相处。
-    " />
+    "
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
         </LinearLayout>
     </ScrollView>
 
