@@ -11,6 +11,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         super(context, name, null, dbVersion);
     }
 
+
     public void onCreate(SQLiteDatabase db) {
         String sql="create table user(id integer primary key autoincrement,username varchar(20),password varchar(20),age integer,sex varchar(2))";
         db.execSQL(sql);

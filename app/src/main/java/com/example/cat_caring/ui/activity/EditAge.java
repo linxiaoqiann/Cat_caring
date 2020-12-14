@@ -1,5 +1,6 @@
 package com.example.cat_caring.ui.activity;
 
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -13,7 +14,7 @@ import com.example.cat_caring.widget.TitleLayout;
 
 //import com.example.cat_caring.db.LoginUser;
 
-public class EditName extends AppCompatActivity {
+public class EditAge extends AppCompatActivity {
     private LoginUser loginUser = LoginUser.getInstance();
     private TitleLayout tl_title;
     private EditText edit_name;
@@ -22,18 +23,18 @@ public class EditName extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityCollector.addActivity(this);
-        setContentView(R.layout.activity_edit_name);
+        setContentView(R.layout.activity_edit_age);
 
         tl_title = (TitleLayout) findViewById(R.id.tl_title);
-        edit_name = (EditText) findViewById(R.id.et_edit_name);
-       edit_name.setText(loginUser.getName());
-
+        edit_name = (EditText) findViewById(R.id.et_edit_age);
+        edit_name.setText(String.valueOf(loginUser.getAge()));
         //设置监听器
         //如果点击完成，则更新loginUser并销毁
         tl_title.getTextView_forward().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginUser.setName(edit_name.getText().toString());
+                loginUser.setAge(new Integer(edit_name.getText().toString()));
+                System.out.println(loginUser.getAge());
                 setResult(RESULT_OK);
                 finish();
             }

@@ -23,9 +23,9 @@ public class ItemGroup extends FrameLayout {
     private TextView contentEdt; //输入框
     private ImageView jtRightIv; //向右的箭头
 
-//    public TextView getContentEdt() {
-//        return contentEdt;
-//    }
+    public TextView getContentEdt() {
+        return contentEdt;
+    }
 
     public ItemGroup(@NonNull Context context) {
         super(context);

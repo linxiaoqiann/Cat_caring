@@ -94,8 +94,8 @@ public class PersonPageFragment extends Fragment implements View.OnClickListener
 
     //
     private void initInfo(){
-        //info_name.setText(loginUser.getName());
-        //portrait.setImageBitmap((new PhotoUtils()).byte2bitmap(loginUser.getPortrait()));
+        info_name.setText(loginUser.getName());
+  //      portrait.setImageBitmap((new PhotoUtils()).byte2bitmap(loginUser.getPortrait()));
     }
 }
 

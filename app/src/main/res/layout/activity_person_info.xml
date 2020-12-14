@@ -65,13 +65,7 @@
         app:paddingLeft="@dimen/padding_left_and_right"
         app:title="@string/my_gender"/>
 
-    <com.example.cat_caring.widget.ItemGroup
-        android:id="@+id/ig_region"
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        app:edt_hint_content="未选择"
-        app:paddingLeft="@dimen/padding_left_and_right"
-        app:title="常住地" />
+
 
     <com.example.cat_caring.widget.ItemGroup
         android:id="@+id/ig_brithday"
@@ -79,7 +73,7 @@
         android:layout_height="46dp"
         app:edt_hint_content="未选择"
         app:paddingLeft="@dimen/padding_left_and_right"
-        app:title="生日" />
+        app:title="年龄" />
 
 
 

@@ -8,10 +8,10 @@ public class ProvinceBean implements IPickerViewData {
     private String code;
     private String province;
 
-//    public ProvinceBean(long id,String name){
-//        this.id = id;
-//        this.name = name;
-//    }
+    public ProvinceBean(long id,String name){
+        this.id = id;
+        this.name = name;
+    }
 
     public String getCode() {
         return code;

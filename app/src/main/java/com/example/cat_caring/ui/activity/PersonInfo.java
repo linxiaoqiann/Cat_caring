@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.ActionBar;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -25,18 +26,16 @@ import androidx.core.content.ContextCompat;
 import com.bigkoo.pickerview.builder.OptionsPickerBuilder;
 import com.bigkoo.pickerview.listener.OnOptionsSelectListener;
 import com.bigkoo.pickerview.view.OptionsPickerView;
+import com.example.cat_caring.MyDatabaseHelper;
 import com.example.cat_caring.R;
 import com.example.cat_caring.db.LoginUser;
 import com.example.cat_caring.util.ActivityCollector;
-import com.example.cat_caring.util.CityBean;
 import com.example.cat_caring.util.PhotoUtils;
 import com.example.cat_caring.util.ProvinceBean;
 import com.example.cat_caring.util.ToastUtils;
 import com.example.cat_caring.widget.ItemGroup;
 import com.example.cat_caring.widget.RoundImageView;
 import com.example.cat_caring.widget.TitleLayout;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -59,7 +58,7 @@ public class PersonInfo extends AppCompatActivity implements View.OnClickListene
     private ArrayList<ArrayList<String>> options2Items = new ArrayList<>();
 
     private OptionsPickerView pvOptions;
-
+    private MyDatabaseHelper dbHelper;
     private RoundImageView ri_portrati;
     private Uri imageUri;  //拍照功能的地址
     private static final int TAKE_PHOTO = 1;
@@ -78,32 +77,44 @@ public class PersonInfo extends AppCompatActivity implements View.OnClickListene
         setContentView(R.layout.activity_person_info);
 //
 //
-//        initOptionData();
-//
-//        ig_id = (ItemGroup)findViewById(R.id.ig_id);
-//        ig_name = (ItemGroup)findViewById(R.id.ig_name);
-//        ig_gender = (ItemGroup)findViewById(R.id.ig_gender);
-//        ig_region = (ItemGroup)findViewById(R.id.ig_region);
-//        ig_brithday = (ItemGroup)findViewById(R.id.ig_brithday);
-//        ll_portrait = (LinearLayout)findViewById(R.id.ll_portrait);
-//        ri_portrati = (RoundImageView)findViewById(R.id.ri_portrait);
-//        titleLayout = (TitleLayout)findViewById(R.id.tl_title);
-//
-//        ig_name.setOnClickListener(this);
-//        ig_gender.setOnClickListener(this);
-//        ig_region.setOnClickListener(this);
-//        ig_brithday.setOnClickListener(this);
-//        ll_portrait.setOnClickListener(this);
-//
-//        //设置点击保存的逻辑
-//        titleLayout.getTextView_forward().setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //loginUser.update();
-//                mToast.showShort(PersonInfo.this,"保存成功");
-//                finish();
-//            }
-//        });
+        initOptionData();
+
+        ig_id = (ItemGroup)findViewById(R.id.ig_id);
+        ig_name = (ItemGroup)findViewById(R.id.ig_name);
+        ig_gender = (ItemGroup)findViewById(R.id.ig_gender);
+       // ig_region = (ItemGroup)findViewById(R.id.ig_region);
+        ig_brithday = (ItemGroup)findViewById(R.id.ig_brithday);
+        ll_portrait = (LinearLayout)findViewById(R.id.ll_portrait);
+        ri_portrati = (RoundImageView)findViewById(R.id.ri_portrait);
+        titleLayout = (TitleLayout)findViewById(R.id.tl_title);
+
+        ig_name.setOnClickListener(this);
+        ig_gender.setOnClickListener(this);     //  ig_region.setOnClickListener(this);
+        ig_brithday.setOnClickListener(this);
+        ll_portrait.setOnClickListener(this);
+
+        //设置点击保存的逻辑
+        titleLayout.getTextView_forward().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dbHelper = new MyDatabaseHelper(PersonInfo.this);
+                SQLiteDatabase sdb=dbHelper.getReadableDatabase();
+                String sql="update user set sex = ? where id= ? ";
+                String sql1="update user set username = ? where id= ? ";
+                String sql2="update user set age = ? where id= ? ";
+                LoginUser loginUser = LoginUser.getInstance();
+                Object obj[]={loginUser.getGender(),loginUser.getId()};
+                Object obj1[]={loginUser.getName(),loginUser.getId()};
+                Object obj2[]={loginUser.getAge(),loginUser.getId()};
+                sdb.execSQL(sql,obj);
+                sdb.execSQL(sql1,obj1);
+                sdb.execSQL(sql2,obj2);
+                loginUser.update();
+
+                mToast.showShort(PersonInfo.this,"保存成功");
+                finish();
+            }
+        });
 
         initInfo();
     }
@@ -112,28 +123,12 @@ public class PersonInfo extends AppCompatActivity implements View.OnClickListene
     protected void onDestroy(){
         super.onDestroy();
         //如果是退出则loginUser的数据重新初始化（也就是不保存数据库）
-       // loginUser.reinit();
+       loginUser.reinit();
         ActivityCollector.removeActivity(this);
     }
 
     public void onClick(View v){
         switch (v.getId()){
-            //点击修改地区逻辑
-            case R.id.ig_region:
-//                pvOptions = new OptionsPickerBuilder(this, new OnOptionsSelectListener() {
-//                    @Override
-//                    public void onOptionsSelect(int options1, int options2, int options3, View v) {
-//                        //选择了则显示并暂存LoginUser，退出时在保存至数据库
-//                        String tx = options1Items.get(options1).getPickerViewText()
-//                                + options2Items.get(options1).get(options2);
-//                       // ig_region.getContentEdt().setText(tx);
-//                       // loginUser.setRegion(tx);
-//                    }
-//                }).setCancelColor(Color.GRAY).build();
-//                pvOptions.setPicker(options1Items, options2Items);//二级选择器
-//                pvOptions.show();
-                break;
-
             //点击修改性别逻辑
             case R.id.ig_gender:
                 //性别选择器
@@ -141,39 +136,19 @@ public class PersonInfo extends AppCompatActivity implements View.OnClickListene
                   @Override
                    public void onOptionsSelect(int options1, int option2, int options3 , View v) {
 //                        //选择了则显示并暂存LoginUser，退出时在保存至数据库
-//                        String tx = optionsItems_gender.get(options1);
-//                        ig_gender.getContentEdt().setText(tx);
-//                        loginUser.setGender(tx);
+                        String tx = optionsItems_gender.get(options1);
+                        ig_gender.getContentEdt().setText(tx);
+                        loginUser.setGender(tx);
                    }
                }).setCancelColor(Color.GRAY).build();
                 pvOptions.setPicker(optionsItems_gender);
                 pvOptions.show();
                 break;
 
-            //点击修改生日逻辑
+            //点击修改年龄逻辑
             case R.id.ig_brithday:
-                //时间选择器
-                //修改打开的默认时间，如果选择过则是选择过的时间，否则是系统默认时间
-//                Calendar selectedDate = Calendar.getInstance();
-//                if (loginUser.getBrithday() != null){
-//                    try {
-//                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日");
-//                        selectedDate.setTime(sdf.parse(loginUser.getBrithday()));
-//                    }catch (ParseException e){
-//                        e.printStackTrace();
-//                    }
-//                }
-//                //初始化picker并show
-//                TimePickerView pvTime = new TimePickerBuilder(PersonInfo.this, new OnTimeSelectListener() {
-//                    @Override
-//                    public void onTimeSelect(Date date, View v) {
-//                        //选择了则显示并暂存LoginUser，退出时在保存至数据库
-//                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日");
-//                        ig_brithday.getContentEdt().setText(sdf.format(date));
-//                        loginUser.setBrithday(sdf.format(date));
-//                    }
-//                }).setDate(selectedDate).setCancelColor(Color.GRAY).build();
-//                pvTime.show();
+                Intent intent  = new Intent(PersonInfo.this, EditAge.class);
+                startActivityForResult(intent, 3);
                 break;
             //点击修改头像的逻辑
             case R.id.ll_portrait:
@@ -182,8 +157,8 @@ public class PersonInfo extends AppCompatActivity implements View.OnClickListene
                 break;
             //点击修改名字的逻辑
             case R.id.ig_name:
-                Intent intent  = new Intent(PersonInfo.this, EditName.class);
-                startActivityForResult(intent, EDIT_NAME);
+                Intent intent1  = new Intent(PersonInfo.this, EditName.class);
+                startActivityForResult(intent1, EDIT_NAME);
                 break;
             default:
                 break;
@@ -228,9 +203,12 @@ public class PersonInfo extends AppCompatActivity implements View.OnClickListene
                 break;
             //如果是编辑名字，则修改展示
             case EDIT_NAME:
-//                if(resultCode == RESULT_OK){
-//                    ig_name.getContentEdt().setText(loginUser.getName());
-//                }
+                if(resultCode == RESULT_OK){
+                    ig_name.getContentEdt().setText(loginUser.getName());
+                }
+                if(resultCode == RESULT_OK){
+                    ig_brithday.getContentEdt().setText(String.valueOf(loginUser.getAge()));
+                }
                 break;
             default:
                 break;
@@ -239,12 +217,12 @@ public class PersonInfo extends AppCompatActivity implements View.OnClickListene
     //从数据库中初始化数据并展示
     private void initInfo(){
         LoginUser loginUser = LoginUser.getInstance();
-       // ig_id.getContentEdt().setText(String.valueOf(loginUser.getId()));  //ID是int，转string
-//        ig_name.getContentEdt().setText(loginUser.getName());
-//        ri_portrati.setImageBitmap(photoUtils.byte2bitmap(loginUser.getPortrait()));
-//        ig_gender.getContentEdt().setText(loginUser.getGender());
-//        ig_region.getContentEdt().setText(loginUser.getRegion());
-//        ig_brithday.getContentEdt().setText(loginUser.getBrithday());
+        ig_id.getContentEdt().setText(String.valueOf(loginUser.getId()));  //ID是int，转string
+        ig_name.getContentEdt().setText(loginUser.getName());
+     //   ri_portrati.setImageBitmap(photoUtils.byte2bitmap(loginUser.getPortrait()));
+        ig_gender.getContentEdt().setText(loginUser.getGender());
+       // ig_region.getContentEdt().setText(loginUser.getRegion());
+        ig_brithday.getContentEdt().setText(String.valueOf(loginUser.getAge()));
     }
 
     //初始化性别、地址和生日的数据
@@ -255,22 +233,22 @@ public class PersonInfo extends AppCompatActivity implements View.OnClickListene
         optionsItems_gender.add(new String("女"));
 
         //地址选择器数据
-        String province_data = readJsonFile("province.json");
-        String city_data = readJsonFile("city.json");
-
-        Gson gson = new Gson();
-
-        options1Items = gson.fromJson(province_data, new TypeToken<ArrayList<ProvinceBean>>(){}.getType());
-        ArrayList<CityBean> cityBean_data = gson.fromJson(city_data, new TypeToken<ArrayList<CityBean>>(){}.getType());
-        for(ProvinceBean provinceBean:options1Items){
-            ArrayList<String> temp = new ArrayList<>();
-            for (CityBean cityBean : cityBean_data){
-                if(provinceBean.getProvince().equals(cityBean.getProvince())){
-                    temp.add(cityBean.getName());
-                }
-            }
-            options2Items.add(temp);
-        }
+//        String province_data = readJsonFile("province.json");
+//        String city_data = readJsonFile("city.json");
+//
+//        Gson gson = new Gson();
+//
+//        options1Items = gson.fromJson(province_data, new TypeToken<ArrayList<ProvinceBean>>(){}.getType());
+//        ArrayList<CityBean> cityBean_data = gson.fromJson(city_data, new TypeToken<ArrayList<CityBean>>(){}.getType());
+//        for(ProvinceBean provinceBean:options1Items){
+//            ArrayList<String> temp = new ArrayList<>();
+//            for (CityBean cityBean : cityBean_data){
+//                if(provinceBean.getProvince().equals(cityBean.getProvince())){
+//                    temp.add(cityBean.getName());
+//                }
+//            }
+//            options2Items.add(temp);
+      //  }
 
     }
 

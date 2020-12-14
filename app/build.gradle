@@ -10,6 +10,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     compileOptions {//指定使用的JDK1.8
         sourceCompatibility = 1.8
@@ -49,8 +50,9 @@ dependencies {
     //Android SQLite操作框架
     implementation 'com.lqr.optionitemview:library:1.0.7'
     implementation 'com.contrarywind:Android-PickerView:4.1.9'
+    implementation 'com.android.support:multidex:1.0.3'
     //拍照
     implementation 'com.longsh:OptionFrame:1.0.0'
-
+    implementation 'com.amap.api:location:latest.integration'
     implementation 'com.amap.api:3dmap:latest.integration'
 }

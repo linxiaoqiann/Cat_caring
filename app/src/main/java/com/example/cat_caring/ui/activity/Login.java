@@ -42,7 +42,7 @@ public class Login extends AppCompatActivity {
                 System.out.println(name);
                 String pass=password.getText().toString();
                 System.out.println(pass);
-
+                User us = new User();
                 Log.i("TAG",name+"_"+pass);
                 UserService uService=new UserService(Login.this);
                 boolean flag=uService.login(name, pass);
