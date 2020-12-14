@@ -21,13 +21,13 @@
         android:layout_height="293dp"
         android:layout_marginLeft="@dimen/padding_left_and_right"
         android:scaleType="centerCrop"
-        android:src="@mipmap/cateat" />
+        android:src="@mipmap/maochibohe" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="161dp"
-        android:text="感谢您同学！                                 大橘已经吃到您捐出的猫粮了！"
+        android:text="感谢您同学！                                 猫薄荷对大橘真的很管用！"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="30sp" />
 

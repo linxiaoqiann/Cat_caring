@@ -43,6 +43,7 @@
             android:name="com.google.android.actions"
             android:resource="@xml/file_path" />
         <activity android:name=".ui.activity.EditAge" />
+        <activity android:name=".Fragment1.catinfo" />
         <activity android:name=".ui.activity.EditName" />
         <activity android:name=".ui.activity.PersonInfo" />
         <activity android:name=".ui.activity.Setting" />

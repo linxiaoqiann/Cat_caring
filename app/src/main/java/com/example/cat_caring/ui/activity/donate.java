@@ -1,6 +1,7 @@
 package com.example.cat_caring.ui.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.AttributeSet;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -20,10 +22,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.cat_caring.Fragment2.pinleiAdapter;
+import com.example.cat_caring.MainActivity;
 import com.example.cat_caring.db.User;
 import com.example.cat_caring.ui.activity.donationAdapter;
 import com.example.cat_caring.ui.activity.donation;
 import com.example.cat_caring.R;
+import com.example.cat_caring.util.ActivityCollector;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,6 +58,9 @@ public class donate extends AppCompatActivity {
 
     private List<donation> donationList = new ArrayList<donation>();
     private ListView listView = null;
+
+    private ImageView bt;
+   
 //    EditText username;
 //    EditText password;
 //    EditText age;
@@ -100,6 +107,14 @@ public class donate extends AppCompatActivity {
         donationAdapter adapter = new donationAdapter(donate.this, R.layout.donation, donationList);//实例化FruitAdapter
         listView = (ListView) findViewById(R.id.listView);//绑定Listview
         listView.setAdapter(adapter);//设置Adapter
+        bt = findViewById(R.id.back);
+        bt.setOnClickListener(new View.OnClickListener(){  //点击按钮监听
+            @Override
+            public void onClick(View v){
+                Intent i = new Intent(donate.this, MainActivity.class); //切换窗口
+                startActivity(i);
+            }
+        });
     }
     private void initFruits() {
         donation maoliang = new donation("请输入你想捐赠的猫粮个数：",R.drawable.maoliang); //添加苹果图片

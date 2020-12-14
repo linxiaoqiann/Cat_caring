@@ -62,15 +62,50 @@ public class mydonate extends AppCompatActivity  {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                setContentView(R.layout.olddon);
-                bt = findViewById(R.id.backk);
-                bt.setOnClickListener(new View.OnClickListener(){  //点击按钮监听
+                if(id == 0)
+                {
+                    setContentView(R.layout.olddon);
+                    bt = findViewById(R.id.backk);
+                    bt.setOnClickListener(new View.OnClickListener(){  //点击按钮监听
                     @Override
                     public void onClick(View v){
                         Intent i = new Intent(mydonate.this, mydonate.class); //切换窗口
                         startActivity(i);
                     }
-                });
+                });}
+                if(id == 1)
+                {
+                    setContentView(R.layout.olddon1);
+                    bt = findViewById(R.id.backk);
+                    bt.setOnClickListener(new View.OnClickListener(){  //点击按钮监听
+                        @Override
+                        public void onClick(View v){
+                            Intent i = new Intent(mydonate.this, mydonate.class); //切换窗口
+                            startActivity(i);
+                        }
+                    });}
+                if(id == 2)
+                {
+                    setContentView(R.layout.olddon2);
+                    bt = findViewById(R.id.backk);
+                    bt.setOnClickListener(new View.OnClickListener(){  //点击按钮监听
+                        @Override
+                        public void onClick(View v){
+                            Intent i = new Intent(mydonate.this, mydonate.class); //切换窗口
+                            startActivity(i);
+                        }
+                    });}
+                if(id == 3)
+                {
+                    setContentView(R.layout.olddon3);
+                    bt = findViewById(R.id.backk);
+                    bt.setOnClickListener(new View.OnClickListener(){  //点击按钮监听
+                        @Override
+                        public void onClick(View v){
+                            Intent i = new Intent(mydonate.this, mydonate.class); //切换窗口
+                            startActivity(i);
+                        }
+                    });}
 //                Intent intent = new Intent();
 //                intent.setAction(Intent.ACTION_VIEW);
 //                intent.setData(Uri.parse(mList.get(position).news_url));
