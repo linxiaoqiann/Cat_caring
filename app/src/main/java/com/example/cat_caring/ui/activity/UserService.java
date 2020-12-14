@@ -4,6 +4,7 @@ package com.example.cat_caring.ui.activity;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.example.cat_caring.MyDatabaseHelper;
 import com.example.cat_caring.db.LoginUser;
@@ -11,7 +12,7 @@ import com.example.cat_caring.db.User;
 
 
 public class UserService {
-    public User user;
+    public  User user;
     private MyDatabaseHelper dbHelper;
 
     SQLiteDatabase sdb;
@@ -25,6 +26,7 @@ public class UserService {
         //      sdb.execSQL(sql);
  //       String
         String sql="select * from user where username=? and password=?";
+
         Cursor cursor=sdb.rawQuery(sql, new String[]{username,password});
         if(cursor.moveToFirst()==true){
                 int id = new Integer(cursor.getString(0));
@@ -42,7 +44,6 @@ public class UserService {
                 user.setAge(age);
                 LoginUser.getInstance().login(user);
             cursor.close();
-            user = new User(cursor.getString(cursor.getColumnIndex("username")),cursor.getString(cursor.getColumnIndex("password")),cursor.getInt(cursor.getColumnIndex("age")),cursor.getString(cursor.getColumnIndex("sex")));
             return true;
         }
         return false;
@@ -68,10 +69,16 @@ public class UserService {
 //    }
     public void inittable(){
         SQLiteDatabase sdb=dbHelper.getReadableDatabase();
-        String sql="create table if not exists user(id integer primary key autoincrement,username varchar(20),password varchar(20),age integer,sex varchar(2))";
+        String sql0 ="drop table if exists user";
+        sdb.execSQL(sql0);
+        String sql="create table if not exists user(id integer primary key autoincrement,username varchar(20),password varchar(20),age integer,sex varchar(2),image BLOB)";
         sdb.execSQL(sql);
+        String sql3 ="drop table if exists cat";
+        sdb.execSQL(sql3);
         String sql1="create table if not exists cat(id integer primary key autoincrement,catname varchar(20),maose varchar(20),birthdate varchar(20),sex varchar(2),condition varchar(20),character varchar(100),image BLOB)";
         sdb.execSQL(sql1);
+        String sql4 ="drop table if exists donation";
+        sdb.execSQL(sql4);
         String sql2="create table if not exists donation(userid integer, maoliang integer,maobohe integer,maosha integer,maoguantou integer,foreign key(userid) REFERENCES user(id))";
         sdb.execSQL(sql2);
     }
