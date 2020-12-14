@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.amap.api.maps.MapView;
 import com.example.cat_caring.Fragment1.schoolcat;
 import com.example.cat_caring.R;
 
