@@ -4,7 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Fragment2.Fragment2">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="313dp"
+        app:srcCompat="@drawable/lingyangmao"
+        tools:src="@drawable/lingyangmao" />
 
     <ScrollView
         android:layout_width="413dp"
@@ -19,12 +27,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="380dp"
-                tools:src="@drawable/lingyangmao" />
 
             <TextView
                 android:id="@+id/textView4"

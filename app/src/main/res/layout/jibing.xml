@@ -6,8 +6,17 @@
     android:layout_height="wrap_content"
     android:background="#FBFBFB"
     android:shape="rectangle"
+    android:orientation="vertical"
     tools:context=".Fragment2.Fragment2">
 
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="395dp"
+        android:layout_height="196dp"
+        android:visibility="visible"
+        app:srcCompat="@drawable/maodazhen"
+        tools:src="@drawable/maodazhen" />
 
     <ScrollView
         android:layout_width="413dp"
@@ -24,11 +33,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:src="@drawable/maodazhen" />
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"

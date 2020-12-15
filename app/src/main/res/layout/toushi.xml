@@ -4,7 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment2.Fragment2">
+    android:orientation="vertical"
+    android:visibility="visible"
+    tools:context=".Fragment2.Fragment2"
+    tools:visibility="visible">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="183dp"
+        android:visibility="visible"
+        app:srcCompat="@drawable/weimao"
+        tools:src="@drawable/weimao"
+        tools:visibility="visible" />
 
     <ScrollView
         android:layout_width="413dp"
@@ -19,12 +31,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:src="@drawable/weimao" />
 
             <TextView
                 android:id="@+id/textView4"
