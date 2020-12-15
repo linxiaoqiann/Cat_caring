@@ -59,9 +59,11 @@ public class UserService {
     public boolean register(User user){
         SQLiteDatabase sdb=dbHelper.getReadableDatabase();
 //        String sql1="create table user(id integer primary key autoincrement,username varchar(20),password varchar(20),age integer,sex varchar(2))";
-//        sdb.execSQL(sql1);
-        String sql="insert into user(username,password,age,sex) values(?,?,?,?)";
-        Object obj[]={user.getUsername(),user.getPassword(),user.getAge(),user.getSex()};
+        Drawable drawable1 = context.getResources().getDrawable(R.drawable.my_cat);
+        BitmapDrawable bd1 = (BitmapDrawable) drawable1;
+        final Bitmap bitmap1 = bd1.getBitmap();
+        String sql="insert into user(username,password,age,sex,image) values(?,?,?,?,?)";
+        Object obj[]={user.getUsername(),user.getPassword(),user.getAge(),user.getSex(),bitmabToBytes(bitmap1)};
         sdb.execSQL(sql, obj);
         return true;
     }
@@ -79,9 +81,9 @@ public class UserService {
         SQLiteDatabase sdb=dbHelper.getReadableDatabase();
 //        String sql5 ="drop table if exists user";
 //        sdb.execSQL(sql5);
-//        String sql6 ="drop table if exists user";
+//        String sql6 ="drop table if exists cat";
 //        sdb.execSQL(sql6);
-//        String sql7 ="drop table if exists user";
+//        String sql7 ="drop table if exists donation";
 //        sdb.execSQL(sql7);
 //        String sql8 ="drop table if exists focus";
 //        sdb.execSQL(sql8);
