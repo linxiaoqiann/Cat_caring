@@ -11,7 +11,7 @@ public class cat implements Serializable {
     private String sex;
     private String condition;
     private String character;
-    private  Blob image;
+    private byte[] image;
 
 
     public cat() {
@@ -31,7 +31,7 @@ public class cat implements Serializable {
         this.character = character;
         this.image=null;
     }
-    public  cat(int id, String catname, String maose, String birthday, String sex, String condition, String character, Blob image) {
+    public  cat(int id, String catname, String maose, String birthday, String sex, String condition, String character, byte[] image) {
         this.id=id;
         this.catname = catname;
         this.maose = maose;
@@ -81,10 +81,10 @@ public class cat implements Serializable {
     public void setCharacter(String character) {
         this.character = character;
     }
-    public Blob getImage() {
+    public byte[] getImage() {
         return image;
     }
-    public void setImage(Blob image) {
+    public void setImage(byte[] image) {
         this.image = image;
     }
 

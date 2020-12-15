@@ -1,6 +1,8 @@
 package com.example.cat_caring.ui.activity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -15,6 +17,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cat_caring.MainActivity;
+import com.example.cat_caring.MyDatabaseHelper;
 import com.example.cat_caring.R;
 import com.example.cat_caring.db.User;
 
@@ -33,6 +36,13 @@ public class Login extends AppCompatActivity {
 
         UserService uService=new UserService(Login.this);
         uService.inittable();
+        String sql1="select * from cat ";
+        MyDatabaseHelper dbHelper=new MyDatabaseHelper(this);
+        SQLiteDatabase sdb=dbHelper.getWritableDatabase();
+        Cursor cursor=sdb.rawQuery(sql1,null);
+        if(!cursor.moveToNext()){
+            uService.initcat();
+        }
     }
 
     private void findViews() {

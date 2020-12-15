@@ -1,5 +1,7 @@
 package com.example.cat_caring.Fragment1;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.widget.ArrayAdapter;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -29,6 +31,9 @@ public class catAdapter extends ArrayAdapter {
         TextView cat_id = (TextView) view.findViewById(R.id.cat_id);
         TextView catName = (TextView) view.findViewById(R.id.cat_name);
 //获取该布局内的文本视图
+        Bitmap imagebitmap = BitmapFactory.decodeByteArray(fruit.getImage(), 0, fruit.getImage().length);
+        //将位图显示为图片
+        catImage.setImageBitmap(imagebitmap);
 //        catImage.setImageResource(fruit.getImageId());//为图片视图设置图片资源
         cat_id.setText(Integer.toString(fruit.getId()));
         catName.setText(fruit.getCatname());
