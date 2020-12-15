@@ -99,15 +99,48 @@ public class UserService {
         Drawable drawable4 = context.getResources().getDrawable(R.drawable.yingduan);
         BitmapDrawable bd4 = (BitmapDrawable) drawable4;
         final Bitmap bitmap4 = bd4.getBitmap();
+        Drawable drawable5 = context.getResources().getDrawable(R.drawable.dayanbao);
+        BitmapDrawable bd5 = (BitmapDrawable) drawable5;
+        final Bitmap bitmap5 = bd5.getBitmap();
+        Drawable drawable6 = context.getResources().getDrawable(R.drawable.heimaojingzhang);
+        BitmapDrawable bd6 = (BitmapDrawable) drawable6;
+        final Bitmap bitmap6 = bd6.getBitmap();
+        Drawable drawable7 = context.getResources().getDrawable(R.drawable.maolv);
+        BitmapDrawable bd7 = (BitmapDrawable) drawable7;
+        final Bitmap bitmap7 = bd7.getBitmap();
+        Drawable drawable8 = context.getResources().getDrawable(R.drawable.dahua);
+        BitmapDrawable bd8 = (BitmapDrawable) drawable8;
+        final Bitmap bitmap8 = bd8.getBitmap();
+        Drawable drawable9 = context.getResources().getDrawable(R.drawable.shiliu);
+        BitmapDrawable bd9 = (BitmapDrawable) drawable9;
+        final Bitmap bitmap9 = bd9.getBitmap();
+        Drawable drawable10 = context.getResources().getDrawable(R.drawable.sanni);
+        BitmapDrawable bd10 = (BitmapDrawable) drawable10;
+        final Bitmap bitmap10 = bd10.getBitmap();
         String sql="insert into cat(catname,maose,birthdate,sex,condition,character,image) values(?,?,?,?,?,?,?)";
+
         Object obj[]={"大橘","橘色","2019-01-01","公","在校","黑白相间",bitmabToBytes(bitmap1)};
         Object obj1[]={"大黑","黑色","2019-01-02","母","在校","黑橘相间",bitmabToBytes(bitmap2)};
         Object obj2[]={"大白","白色","2019-01-03","公","毕业","橘白相间",bitmabToBytes(bitmap3)};
         Object obj3[]={"大黄","黄色","2019-01-04","公","喵星","白黑相间",bitmabToBytes(bitmap4)};
+        Object obj4[]={"大眼猫","橘色","2019-06-27","公","在校","脸上有白色条纹",bitmabToBytes(bitmap5)};
+        Object obj5[]={"黑猫警长","黑灰色","2019-05-29","公","毕业","颜色偏深",bitmabToBytes(bitmap6)};
+        Object obj6[]={"毛驴","黑白色","2020-04-19","公","休学","长得像驴",bitmabToBytes(bitmap7)};
+        Object obj7[]={"大华","黄白相间","2019-02-18","母","休学","手握樱桃",bitmabToBytes(bitmap8)};
+        Object obj8[]={"十六","白黄黑","2018-11-30","公","喵星 ","长得吓人",bitmabToBytes(bitmap9)};
+        Object obj9[]={"三妮","黄相间","2020-10-03","母","喵星","挺黄的",bitmabToBytes(bitmap10)};
+
         sdb.execSQL(sql, obj);
         sdb.execSQL(sql, obj1);
         sdb.execSQL(sql, obj2);
         sdb.execSQL(sql, obj3);
+        sdb.execSQL(sql, obj4);
+        sdb.execSQL(sql, obj5);
+        sdb.execSQL(sql, obj6);
+        sdb.execSQL(sql, obj7);
+        sdb.execSQL(sql, obj8);
+        sdb.execSQL(sql, obj9);
+
     }
 
 
