@@ -117,13 +117,13 @@ public class donate extends AppCompatActivity {
         });
     }
     private void initFruits() {
-        donation maoliang = new donation("请输入你想捐赠的猫粮个数：",R.drawable.maoliang); //添加苹果图片
+        donation maoliang = new donation("您已捐赠的数量："," ","请输入你想捐赠的猫粮个数：",R.drawable.maoliang); //添加苹果图片
         donationList.add(maoliang);
-        donation maosha = new donation("请输入你想捐赠的猫砂袋数：",R.drawable.maosha); //添加苹果图片
+        donation maosha = new donation("您已捐赠的数量："," ","请输入你想捐赠的猫砂袋数：",R.drawable.maosha); //添加苹果图片
         donationList.add(maosha);
-        donation maoguantou = new donation("请输入你想捐赠的猫罐头数：", R.drawable.maoguantou); //添加苹果图片
+        donation maoguantou = new donation("您已捐赠的数量："," ","请输入你想捐赠的猫罐头数：", R.drawable.maoguantou); //添加苹果图片
         donationList.add(maoguantou);
-        donation maobohe = new donation("请输入你想捐赠的猫草斤数：", R.drawable.maobohe); //添加苹果图片
+        donation maobohe = new donation("您已捐赠的数量："," ","请输入你想捐赠的猫草斤数：", R.drawable.maobohe); //添加苹果图片
         donationList.add(maobohe);
 
     }

@@ -25,9 +25,13 @@ public class donationAdapter extends ArrayAdapter {
         View view = LayoutInflater.from(getContext()).inflate(resourceId, null);//实例化一个对象
         ImageView donateImage = (ImageView) view.findViewById(R.id.donate_image);//获取该布局内的图片视图
         TextView donateName = (TextView) view.findViewById(R.id.donate_name);
+        TextView donateSen = (TextView) view.findViewById(R.id.donate_sen);
+        TextView donatecount = (TextView) view.findViewById(R.id.donate_count);
 //获取该布局内的文本视图
         donateImage.setImageResource(fruit.getImageId());//为图片视图设置图片资源
         donateName.setText(fruit.getName());
+        donateSen.setText(fruit.getSentence());
+        donatecount.setText(fruit.getCount());
         //为文本视图设置文本内容
         return view;
     }
