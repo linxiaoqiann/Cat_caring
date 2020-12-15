@@ -150,12 +150,24 @@
     <LinearLayout
         android:id="@+id/add"
         android:layout_width="match_parent"
+        android:orientation="vertical"
         android:layout_height="283dp">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="快来点击下方图片
+            \n添加你与猫猫的互动照片吧！"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="24sp" />
 
         <com.example.cat_caring.widget.RoundImageView
             android:id="@+id/add_1"
             android:layout_width="match_parent"
-            android:layout_height="278dp"
-            app:srcCompat="@android:drawable/ic_input_add" />
+            android:layout_height="200dp"
+            app:srcCompat="@drawable/lingyangmao" />
+
     </LinearLayout>
 </LinearLayout>
