@@ -3,6 +3,7 @@ package com.example.cat_caring.Fragment1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -51,9 +52,13 @@ public class catinfo extends AppCompatActivity {
             public void onClick(View v) {
                 dbHelper=new MyDatabaseHelper(catinfo.this);
                 SQLiteDatabase sdb=dbHelper.getWritableDatabase();
-                String sql="insert into focus(userid,catid) values(?,?)";
-                Object obj[]={Integer.toString(LoginUser.getInstance().getId()),Integer.toString(cat.getId())};
-                sdb.execSQL(sql, obj);
+                String sql1="select * from focus where userid= ? and catid = ?";
+                Cursor cursor=sdb.rawQuery(sql1, new String[]{Integer.toString(LoginUser.getInstance().getId()),Integer.toString(cat.getId())});
+                if(!cursor.moveToNext()){
+                    String sql="insert into focus(userid,catid) values(?,?)";
+                    Object obj[]={Integer.toString(LoginUser.getInstance().getId()),Integer.toString(cat.getId())};
+                    sdb.execSQL(sql, obj);
+                }
             }
         });
         initdata();
