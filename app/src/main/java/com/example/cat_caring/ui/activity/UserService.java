@@ -75,6 +75,19 @@ public class UserService {
         String sql2="create table if not exists donation(userid integer, maoliang integer,maobohe integer,maosha integer,maoguantou integer,foreign key(userid) REFERENCES user(id))";
         sdb.execSQL(sql2);
     }
+
+    public void  initcat(){
+        SQLiteDatabase sdb=dbHelper.getReadableDatabase();
+        String sql="insert into cat(catname,maose,birthday,sex,condition,character) values(?,?,?,?,?,?)";
+        Object obj[]={"大橘","橘色","2019-01-01","公","健康","黑白相间"};
+        Object obj1[]={"大黑","黑色","2019-01-02","母","衰弱","黑橘相间"};
+        Object obj2[]={"大白","白色","2019-01-03","公","精神","橘白相间"};
+        Object obj3[]={"大黄","黄色","2019-01-04","公","丑陋","白黑相间"};
+        sdb.execSQL(sql, obj);
+        sdb.execSQL(sql, obj1);
+        sdb.execSQL(sql, obj2);
+        sdb.execSQL(sql, obj3);
+    }
     public void update(){
 
     }
