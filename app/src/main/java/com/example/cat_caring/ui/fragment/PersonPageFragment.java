@@ -131,9 +131,9 @@ public class PersonPageFragment extends Fragment implements View.OnClickListener
         String sql1="select * from user where id=? ";
         int id = LoginUser.login_user.getId();
         dbHelper=new MyDatabaseHelper(this.getContext());
-        SQLiteDatabase sdb=dbHelper.getWritableDatabase();
+        SQLiteDatabase sdb=dbHelper.getReadableDatabase();
         Cursor cursor=sdb.rawQuery(sql1, new String[]{Integer.toString(id)});
-        byte[] imgData=null;
+        byte[] imgData;
         if(cursor.moveToNext()){
             //将Blob数据转化为字节数组
             imgData=cursor.getBlob(cursor.getColumnIndex("image"));

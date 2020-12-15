@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,7 @@ import com.example.cat_caring.Fragment1.catinfo;
 import com.example.cat_caring.Fragment2.meiduan;
 import com.example.cat_caring.MyDatabaseHelper;
 import com.example.cat_caring.R;
+import com.example.cat_caring.db.LoginUser;
 import com.example.cat_caring.db.cat;
 import com.example.cat_caring.util.ActivityCollector;
 import com.example.cat_caring.widget.TitleLayout;
@@ -33,6 +35,7 @@ import java.util.List;
 import static com.amap.api.maps.model.BitmapDescriptorFactory.getContext;
 
 public class guanzhu extends AppCompatActivity {
+    MyDatabaseHelper dbHelper;
     private List<cat> catList = new ArrayList<cat>();
     private ListView listView = null;
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +49,9 @@ public class guanzhu extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                cat item=(cat) adapter.getItem(position);
                 Intent i = new Intent(guanzhu.this, catinfo.class);
+                i.putExtra("cat",item);
                 startActivity(i);
             }
 
@@ -55,21 +60,25 @@ public class guanzhu extends AppCompatActivity {
 
     private void initFruits() {
 
-//        String sql1="select * from cat where condition= ?";
-//        MyDatabaseHelper dbHelper=new MyDatabaseHelper(getContext());
-//        SQLiteDatabase sdb=dbHelper.getWritableDatabase();
-//        Cursor cursor=sdb.rawQuery(sql1, new String[]{"在校"});
-//        while(cursor.moveToNext()){
-//            int id = cursor.getInt(cursor.getColumnIndex("id"));
-//            String catname = cursor.getString(cursor.getColumnIndex("catname"));
-//            String maose = cursor.getString(cursor.getColumnIndex("maose"));
-//            String birthday = cursor.getString(cursor.getColumnIndex("birthdate"));
-//            String sex = cursor.getString(cursor.getColumnIndex("sex"));
-//            String condition = cursor.getString(cursor.getColumnIndex("condition"));
-//            String character = cursor.getString(cursor.getColumnIndex("character"));
-//            byte[] image = cursor.getBlob(cursor.getColumnIndex("image"));
-//            cat tempcat = new cat(id,catname,maose,birthday,sex,condition,character,image);
-//            catList.add(tempcat);
-//        }
+        String sql1="select * from focus where userid= ?";
+        dbHelper=new MyDatabaseHelper(this);
+        SQLiteDatabase sdb=dbHelper.getReadableDatabase();
+        Cursor cursor=sdb.rawQuery(sql1, new String[]{Integer.toString(LoginUser.getInstance().getId())});
+        while(cursor.moveToNext()){
+            int catid = cursor.getInt(cursor.getColumnIndex("catid"));
+            Log.e("FUCK",Integer.toString(catid));
+            String sql2="select * from cat where id= ?";
+            Cursor cursor1=sdb.rawQuery(sql2, new String[]{Integer.toString(catid)});
+            cursor1.moveToNext();
+            String catname = cursor1.getString(cursor1.getColumnIndex("catname"));
+            String maose = cursor1.getString(cursor1.getColumnIndex("maose"));
+            String birthday = cursor1.getString(cursor1.getColumnIndex("birthdate"));
+            String sex = cursor1.getString(cursor1.getColumnIndex("sex"));
+            String condition = cursor1.getString(cursor1.getColumnIndex("condition"));
+            String character = cursor1.getString(cursor1.getColumnIndex("character"));
+            byte[] image = cursor1.getBlob(cursor1.getColumnIndex("image"));
+            cat tempcat = new cat(catid,catname,maose,birthday,sex,condition,character,image);
+            catList.add(tempcat);
+        }
     }
 }

@@ -39,13 +39,11 @@ public class Fragment1_1 extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(id == 0) {
-                    cat item=(cat) adapter.getItem(position);
-                    Toast.makeText(getActivity(), "你点击了第" + item.getCatname() + "项!",
-                            Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(getActivity(), catinfo.class);
-                    startActivity(i);
-                }            }
+                cat item=(cat) adapter.getItem(position);
+                Intent i = new Intent(getActivity(), catinfo.class);
+                i.putExtra("cat",item);
+                startActivity(i);
+            }
 
         });
 

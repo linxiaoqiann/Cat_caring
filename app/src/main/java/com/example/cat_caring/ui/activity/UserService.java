@@ -77,12 +77,22 @@ public class UserService {
 //    }
     public void inittable(){
         SQLiteDatabase sdb=dbHelper.getReadableDatabase();
+//        String sql5 ="drop table if exists user";
+//        sdb.execSQL(sql5);
+//        String sql6 ="drop table if exists user";
+//        sdb.execSQL(sql6);
+//        String sql7 ="drop table if exists user";
+//        sdb.execSQL(sql7);
+//        String sql8 ="drop table if exists focus";
+//        sdb.execSQL(sql8);
         String sql1="create table if not exists user(id integer primary key autoincrement,username varchar(20),password varchar(20),age integer,sex varchar(2),image BLOB)";
         sdb.execSQL(sql1);
         String sql2="create table if not exists cat(id integer primary key autoincrement,catname varchar(20),maose varchar(20),birthdate varchar(20),sex varchar(2),condition varchar(20),character varchar(100),image BLOB)";
         sdb.execSQL(sql2);
         String sql3="create table if not exists donation(userid integer, maoliang integer,maobohe integer,maosha integer,maoguantou integer,foreign key(userid) REFERENCES user(id))";
         sdb.execSQL(sql3);
+        String sql4="create table if not exists focus(userid integer,catid integer,foreign key(userid) REFERENCES user(id),foreign key(catid) REFERENCES cat(id))";
+        sdb.execSQL(sql4);
     }
 
     public void  initcat(){

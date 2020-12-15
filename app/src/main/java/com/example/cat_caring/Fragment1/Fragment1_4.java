@@ -1,11 +1,13 @@
 package com.example.cat_caring.Fragment1;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
@@ -32,6 +34,16 @@ public class Fragment1_4 extends Fragment {
         catAdapter adapter = new catAdapter(getContext(), R.layout.schoolcat_item, catList);//实例化FruitAdapter
         listView = getView().findViewById(R.id.listView);//绑定Listview
         listView.setAdapter(adapter);//设置Adapter
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                cat item=(cat) adapter.getItem(position);
+                Intent i = new Intent(getActivity(), catinfo.class);
+                i.putExtra("cat",item);
+                startActivity(i);
+            }
+
+        });
     }
 
     private void initFruits() {
